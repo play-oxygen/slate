@@ -3,7 +3,7 @@ title: Play Oxygen API v0.1.0
 language_tabs:
   - shell: curl
 toc_footers: []
-includes: []
+includes: ["_auth.md"]
 search: true
 highlight_theme: darkula
 headingLevel: 2
@@ -127,4 +127,3 @@ UserResponse
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |token|string|false|none|JWT|
-
