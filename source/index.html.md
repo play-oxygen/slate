@@ -1,245 +1,199 @@
 ---
-title: API Reference
-
-language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
-  - shell
-  - ruby
-  - python
-  - javascript
-
-toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
-
-includes:
-  - errors
-
+title: API v
+language_tabs:
+  - shell: Shell
+toc_footers: []
+includes: []
 search: true
+highlight_theme: darkula
+headingLevel: 2
 
-code_clipboard: true
-
-meta:
-  - name: description
-    content: Documentation for the Kittn API
 ---
 
-# Introduction
+<!-- Generator: Widdershins v4.0.1 -->
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+<h1 id=""> v</h1>
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+> Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Base URLs:
+
+* <a href="http://localhost:4000">http://localhost:4000</a>
 
 # Authentication
 
-> To authorize, use this code:
+- HTTP Authentication, scheme: bearer
 
-```ruby
-require 'kittn'
+<h1 id="-default">Default</h1>
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+## get__api_auth_session_delete
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+> Code samples
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
+# You can also use wget
+curl -X GET http://localhost:4000/api/auth/session/delete
+
 ```
 
-```javascript
-const kittn = require('kittn');
+`GET /api/auth/session/delete`
 
-let api = kittn.authorize('meowmeowmeow');
-```
+<h3 id="get__api_auth_session_delete-responses">Responses</h3>
 
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+This operation does not require authentication
 </aside>
 
-## Get a Specific Kitten
+## get__api_auth_session_refresh
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+> Code samples
 
 ```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
+# You can also use wget
+curl -X GET http://localhost:4000/api/auth/session/refresh
+
 ```
 
-```javascript
-const kittn = require('kittn');
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+
+`GET /api/auth/session/refresh`
+
+<h3 id="get__api_auth_session_refresh-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+## get__api_int_clients_{name}
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET http://localhost:4000/api/int/clients/{name}
+
 ```
 
-> The above command returns JSON structured like this:
+`GET /api/int/clients/{name}`
+
+<h3 id="get__api_int_clients_{name}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h1 id="-authentication">authentication</h1>
+
+## Po2Web.AuthenticationController.session
+
+<a id="opIdPo2Web.AuthenticationController.session"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST http://localhost:4000/api/auth/session/{client_id} \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json'
+
+```
+
+`POST /api/auth/session/{client_id}`
+
+*Authentication for Client*
+
+> Body parameter
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "api_key": "po2_123456789",
+  "secret": "sandbox_123456789"
 }
 ```
 
-This endpoint retrieves a specific kitten.
+<h3 id="po2web.authenticationcontroller.session-parameters">Parameters</h3>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|client_id|path|integer|true|Client ID|
+|body|body|[AuthParams](#schemaauthparams)|false|Client params|
 
-### HTTP Request
+> Example responses
 
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
+> 200 Response
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+  "token": "eyJhbGciOiJIUzUxMiIsIn ... JUe4WCUMw"
 }
 ```
 
-This endpoint deletes a specific kitten.
+<h3 id="po2web.authenticationcontroller.session-responses">Responses</h3>
 
-### HTTP Request
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Client response|[UserResponse](#schemauserresponse)|
 
-`DELETE http://example.com/kittens/<ID>`
+### Callbacks
 
-### URL Parameters
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+None
+</aside>
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+# Schemas
 
+<h2 id="tocS_AuthParams">AuthParams</h2>
+<!-- backwards compatibility -->
+<a id="schemaauthparams"></a>
+<a id="schema_AuthParams"></a>
+<a id="tocSauthparams"></a>
+<a id="tocsauthparams"></a>
+
+```json
+{
+  "api_key": "po2_123456789",
+  "secret": "sandbox_123456789"
+}
+
+```
+
+AuthParams
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|api_key|string|true|none|API Key|
+|secret|string|true|none|API secret|
+
+<h2 id="tocS_UserResponse">UserResponse</h2>
+<!-- backwards compatibility -->
+<a id="schemauserresponse"></a>
+<a id="schema_UserResponse"></a>
+<a id="tocSuserresponse"></a>
+<a id="tocsuserresponse"></a>
+
+```json
+{
+  "token": "eyJhbGciOiJIUzUxMiIsIn ... JUe4WCUMw"
+}
+
+```
+
+UserResponse
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|token|string|false|none|JWT|
