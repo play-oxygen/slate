@@ -1,7 +1,14 @@
 ---
-title: Play Oxygen API
+title: API v
 language_tabs:
   - shell: Shell
+  - http: HTTP
+  - javascript: JavaScript
+  - ruby: Ruby
+  - python: Python
+  - php: PHP
+  - java: Java
+  - go: Go
 toc_footers: []
 includes: []
 search: true
@@ -24,73 +31,6 @@ Base URLs:
 
 - HTTP Authentication, scheme: bearer
 
-<h1 id="-default">Default</h1>
-
-## get__api_auth_session_delete
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X GET http://localhost:4000/api/auth/session/delete
-
-```
-
-`GET /api/auth/session/delete`
-
-<h3 id="get__api_auth_session_delete-responses">Responses</h3>
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-
-<aside class="success">
-This operation does not require authentication
-</aside>
-
-## get__api_auth_session_refresh
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X GET http://localhost:4000/api/auth/session/refresh
-
-```
-
-
-
-`GET /api/auth/session/refresh`
-
-<h3 id="get__api_auth_session_refresh-responses">Responses</h3>
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-
-<aside class="success">
-This operation does not require authentication
-</aside>
-
-## get__api_int_clients_{name}
-
-> Code samples
-
-```shell
-# You can also use wget
-curl -X GET http://localhost:4000/api/int/clients/{name}
-
-```
-
-`GET /api/int/clients/{name}`
-
-<h3 id="get__api_int_clients_{name}-responses">Responses</h3>
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-
-<aside class="success">
-This operation does not require authentication
-</aside>
-
 <h1 id="-authentication">authentication</h1>
 
 ## Po2Web.AuthenticationController.session
@@ -104,6 +44,143 @@ This operation does not require authentication
 curl -X POST http://localhost:4000/api/auth/session/{client_id} \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json'
+
+```
+
+```http
+POST http://localhost:4000/api/auth/session/{client_id} HTTP/1.1
+Host: localhost:4000
+Content-Type: application/json
+Accept: application/json
+
+```
+
+```javascript
+const inputBody = '{
+  "api_key": "po2_123456789",
+  "secret": "sandbox_123456789"
+}';
+const headers = {
+  'Content-Type':'application/json',
+  'Accept':'application/json'
+};
+
+fetch('http://localhost:4000/api/auth/session/{client_id}',
+{
+  method: 'POST',
+  body: inputBody,
+  headers: headers
+})
+.then(function(res) {
+    return res.json();
+}).then(function(body) {
+    console.log(body);
+});
+
+```
+
+```ruby
+require 'rest-client'
+require 'json'
+
+headers = {
+  'Content-Type' => 'application/json',
+  'Accept' => 'application/json'
+}
+
+result = RestClient.post 'http://localhost:4000/api/auth/session/{client_id}',
+  params: {
+  }, headers: headers
+
+p JSON.parse(result)
+
+```
+
+```python
+import requests
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+r = requests.post('http://localhost:4000/api/auth/session/{client_id}', headers = headers)
+
+print(r.json())
+
+```
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+$headers = array(
+    'Content-Type' => 'application/json',
+    'Accept' => 'application/json',
+);
+
+$client = new \GuzzleHttp\Client();
+
+// Define array of request body.
+$request_body = array();
+
+try {
+    $response = $client->request('POST','http://localhost:4000/api/auth/session/{client_id}', array(
+        'headers' => $headers,
+        'json' => $request_body,
+       )
+    );
+    print_r($response->getBody()->getContents());
+ }
+ catch (\GuzzleHttp\Exception\BadResponseException $e) {
+    // handle exception or api errors.
+    print_r($e->getMessage());
+ }
+
+ // ...
+
+```
+
+```java
+URL obj = new URL("http://localhost:4000/api/auth/session/{client_id}");
+HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+con.setRequestMethod("POST");
+int responseCode = con.getResponseCode();
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuffer response = new StringBuffer();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+System.out.println(response.toString());
+
+```
+
+```go
+package main
+
+import (
+       "bytes"
+       "net/http"
+)
+
+func main() {
+
+    headers := map[string][]string{
+        "Content-Type": []string{"application/json"},
+        "Accept": []string{"application/json"},
+    }
+
+    data := bytes.NewBuffer([]byte{jsonReq})
+    req, err := http.NewRequest("POST", "http://localhost:4000/api/auth/session/{client_id}", data)
+    req.Header = headers
+
+    client := &http.Client{}
+    resp, err := client.Do(req)
+    // ...
+}
 
 ```
 
@@ -197,3 +274,4 @@ UserResponse
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |token|string|false|none|JWT|
+
