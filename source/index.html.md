@@ -1,18 +1,18 @@
 ---
-title: API v
+title: Play Oxygen API v0.1.0
 language_tabs:
   - shell: curl
 toc_footers: []
 includes: []
 search: true
 highlight_theme: darkula
-headingLevel: 2
+headingLevel: 1
 
 ---
 
 <!-- Generator: Widdershins v4.0.1 -->
 
-<h1 id=""> v</h1>
+<h1 id="play-oxygen-api">Play Oxygen API v0.1.0</h1>
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
@@ -20,11 +20,7 @@ Base URLs:
 
 * <a href="http://localhost:4000">http://localhost:4000</a>
 
-# Authentication
-
-- HTTP Authentication, scheme: bearer
-
-<h1 id="-authentication">authentication</h1>
+<h1 id="play-oxygen-api-authentication">Authentication</h1>
 
 ## Po2Web.AuthenticationController.session
 
@@ -59,6 +55,8 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 |---|---|---|---|---|
 |client_id|path|integer|true|Client ID|
 |body|body|[AuthParams](#schemaauthparams)|false|Client params|
+|» api_key|body|string|true|API Key|
+|» secret|body|string|true|API secret|
 
 > Example responses
 
