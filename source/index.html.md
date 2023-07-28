@@ -6,7 +6,7 @@ toc_footers: []
 includes: []
 search: true
 highlight_theme: darkula
-headingLevel: 1
+headingLevel: 2
 
 ---
 
@@ -22,9 +22,9 @@ Base URLs:
 
 <h1 id="play-oxygen-api-authentication">Authentication</h1>
 
-## Po2Web.AuthenticationController.session
+## Session
 
-<a id="opIdPo2Web.AuthenticationController.session"></a>
+<a id="opIdSession"></a>
 
 > Code samples
 
@@ -49,7 +49,7 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 }
 ```
 
-<h3 id="po2web.authenticationcontroller.session-parameters">Parameters</h3>
+<h3 id="session-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -68,7 +68,7 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 }
 ```
 
-<h3 id="po2web.authenticationcontroller.session-responses">Responses</h3>
+<h3 id="session-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -76,9 +76,8 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 
 ### Callbacks
 
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-None
+<aside class="success">
+This operation does not require authentication
 </aside>
 
 # Schemas
