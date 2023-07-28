@@ -1,5 +1,5 @@
 ---
-title: API v
+title: Play Oxygen API
 language_tabs:
   - shell: Shell
 toc_footers: []
