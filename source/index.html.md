@@ -58,7 +58,7 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |client_id|path|integer|true|Client ID|
-|body|body|[AuthParams](#schemaauthparams)|false|Client params|
+|body|body|[Authentication Parameters](#schemaauthentication parameters)|false|Client params|
 |» api_key|body|string|true|API Key|
 |» secret|body|string|true|API secret|
 
@@ -76,7 +76,7 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Client response|[AuthResponse](#schemaauthresponse)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Client response|[Authentication Response](#schemaauthentication response)|
 
 ### Callbacks
 
@@ -86,12 +86,12 @@ This operation does not require authentication
 
 # Schemas
 
-<h2 id="tocS_AuthParams">AuthParams</h2>
+<h2 id="tocS_Authentication Parameters">Authentication Parameters</h2>
 <!-- backwards compatibility -->
-<a id="schemaauthparams"></a>
-<a id="schema_AuthParams"></a>
-<a id="tocSauthparams"></a>
-<a id="tocsauthparams"></a>
+<a id="schemaauthentication parameters"></a>
+<a id="schema_Authentication Parameters"></a>
+<a id="tocSauthentication parameters"></a>
+<a id="tocsauthentication parameters"></a>
 
 ```json
 {
@@ -101,7 +101,7 @@ This operation does not require authentication
 
 ```
 
-AuthParams
+Authentication Parameters
 
 ### Properties
 
@@ -110,12 +110,12 @@ AuthParams
 |api_key|string|true|none|API Key|
 |secret|string|true|none|API secret|
 
-<h2 id="tocS_AuthResponse">AuthResponse</h2>
+<h2 id="tocS_Authentication Response">Authentication Response</h2>
 <!-- backwards compatibility -->
-<a id="schemaauthresponse"></a>
-<a id="schema_AuthResponse"></a>
-<a id="tocSauthresponse"></a>
-<a id="tocsauthresponse"></a>
+<a id="schemaauthentication response"></a>
+<a id="schema_Authentication Response"></a>
+<a id="tocSauthentication response"></a>
+<a id="tocsauthentication response"></a>
 
 ```json
 {
@@ -124,7 +124,7 @@ AuthParams
 
 ```
 
-AuthResponse
+Authentication Response
 
 ### Properties
 
