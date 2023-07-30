@@ -20,6 +20,10 @@ Base URLs:
 
 * <a href="http://localhost:4000">http://localhost:4000</a>
 
+# Authentication
+
+- HTTP Authentication, scheme: bearer
+
 <h1 id="play-oxygen-api-session">Session</h1>
 
 ## New Session
