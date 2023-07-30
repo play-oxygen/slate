@@ -76,7 +76,7 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Client response|[UserResponse](#schemauserresponse)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Client response|[AuthResponse](#schemaauthresponse)|
 
 ### Callbacks
 
@@ -110,12 +110,12 @@ AuthParams
 |api_key|string|true|none|API Key|
 |secret|string|true|none|API secret|
 
-<h2 id="tocS_UserResponse">UserResponse</h2>
+<h2 id="tocS_AuthResponse">AuthResponse</h2>
 <!-- backwards compatibility -->
-<a id="schemauserresponse"></a>
-<a id="schema_UserResponse"></a>
-<a id="tocSuserresponse"></a>
-<a id="tocsuserresponse"></a>
+<a id="schemaauthresponse"></a>
+<a id="schema_AuthResponse"></a>
+<a id="tocSauthresponse"></a>
+<a id="tocsauthresponse"></a>
 
 ```json
 {
@@ -124,7 +124,7 @@ AuthParams
 
 ```
 
-UserResponse
+AuthResponse
 
 ### Properties
 
