@@ -326,7 +326,7 @@
                     <a href="#tocS_AuthParams" class="toc-h2 toc-link" data-title="AuthParams">AuthParams</a>
                   </li>
                   <li>
-                    <a href="#tocS_UserResponse" class="toc-h2 toc-link" data-title="UserResponse">UserResponse</a>
+                    <a href="#tocS_AuthResponse" class="toc-h2 toc-link" data-title="AuthResponse">AuthResponse</a>
                   </li>
               </ul>
           </li>
@@ -444,7 +444,7 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/auth/session/<spa
 <td>200</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
 <td>Client response</td>
-<td><a href="#schemauserresponse">UserResponse</a></td>
+<td><a href="#schemaauthresponse">AuthResponse</a></td>
 </tr>
 </tbody></table>
 <h3 id='callbacks'>Callbacks</h3>
@@ -493,20 +493,20 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h2 id="tocS_UserResponse">UserResponse</h2>
+<h2 id="tocS_AuthResponse">AuthResponse</h2>
 
 <!-- backwards compatibility -->
 
-<p><a id="schemauserresponse"></a>
-<a id="schema_UserResponse"></a>
-<a id="tocSuserresponse"></a>
-<a id="tocsuserresponse"></a></p>
+<p><a id="schemaauthresponse"></a>
+<a id="schema_AuthResponse"></a>
+<a id="tocSauthresponse"></a>
+<a id="tocsauthresponse"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzUxMiIsIn ... JUe4WCUMw"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
-<p>UserResponse</p>
+<p>AuthResponse</p>
 <h3 id='properties-2'>Properties</h3>
 <table><thead>
 <tr>
