@@ -3,7 +3,7 @@ title: Play Oxygen API v0.1.0
 language_tabs:
   - shell: curl
 toc_footers: []
-includes: ["_auth.md"]
+includes: []
 search: true
 highlight_theme: darkula
 headingLevel: 2
@@ -20,11 +20,11 @@ Base URLs:
 
 * <a href="http://localhost:4000">http://localhost:4000</a>
 
-<h1 id="play-oxygen-api-authentication">Authentication</h1>
+<h1 id="play-oxygen-api-session">Session</h1>
 
-## Session
+## New Session
 
-<a id="opIdSession"></a>
+<a id="opIdNew Session"></a>
 
 > Code samples
 
@@ -49,7 +49,7 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 }
 ```
 
-<h3 id="session-parameters">Parameters</h3>
+<h3 id="new-session-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -68,7 +68,7 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 }
 ```
 
-<h3 id="session-responses">Responses</h3>
+<h3 id="new-session-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -127,3 +127,4 @@ UserResponse
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |token|string|false|none|JWT|
+
