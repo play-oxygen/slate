@@ -323,10 +323,10 @@
             <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#tocS_AuthParams" class="toc-h2 toc-link" data-title="AuthParams">AuthParams</a>
+                    <a href="#tocS_Authentication Parameters" class="toc-h2 toc-link" data-title="Authentication Parameters">Authentication Parameters</a>
                   </li>
                   <li>
-                    <a href="#tocS_AuthResponse" class="toc-h2 toc-link" data-title="AuthResponse">AuthResponse</a>
+                    <a href="#tocS_Authentication Response" class="toc-h2 toc-link" data-title="Authentication Response">Authentication Response</a>
                   </li>
               </ul>
           </li>
@@ -401,7 +401,7 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/auth/session/<spa
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schemaauthparams">AuthParams</a></td>
+<td><a href="#schemaauthentication%20parameters">Authentication Parameters</a></td>
 <td>false</td>
 <td>Client params</td>
 </tr>
@@ -444,7 +444,7 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/auth/session/<spa
 <td>200</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
 <td>Client response</td>
-<td><a href="#schemaauthresponse">AuthResponse</a></td>
+<td><a href="#schemaauthentication%20response">Authentication Response</a></td>
 </tr>
 </tbody></table>
 <h3 id='callbacks'>Callbacks</h3>
@@ -452,21 +452,21 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/auth/session/<spa
 This operation does not require authentication
 </aside>
 <h1 id='schemas'>Schemas</h1>
-<h2 id="tocS_AuthParams">AuthParams</h2>
+<h2 id="tocS_Authentication Parameters">Authentication Parameters</h2>
 
 <!-- backwards compatibility -->
 
-<p><a id="schemaauthparams"></a>
-<a id="schema_AuthParams"></a>
-<a id="tocSauthparams"></a>
-<a id="tocsauthparams"></a></p>
+<p><a id="schemaauthentication parameters"></a>
+<a id="schema_Authentication Parameters"></a>
+<a id="tocSauthentication parameters"></a>
+<a id="tocsauthentication parameters"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"po2_123456789"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sandbox_123456789"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
-<p>AuthParams</p>
+<p>Authentication Parameters</p>
 <h3 id='properties'>Properties</h3>
 <table><thead>
 <tr>
@@ -493,20 +493,20 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h2 id="tocS_AuthResponse">AuthResponse</h2>
+<h2 id="tocS_Authentication Response">Authentication Response</h2>
 
 <!-- backwards compatibility -->
 
-<p><a id="schemaauthresponse"></a>
-<a id="schema_AuthResponse"></a>
-<a id="tocSauthresponse"></a>
-<a id="tocsauthresponse"></a></p>
+<p><a id="schemaauthentication response"></a>
+<a id="schema_Authentication Response"></a>
+<a id="tocSauthentication response"></a>
+<a id="tocsauthentication response"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzUxMiIsIn ... JUe4WCUMw"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
-<p>AuthResponse</p>
+<p>Authentication Response</p>
 <h3 id='properties-2'>Properties</h3>
 <table><thead>
 <tr>
