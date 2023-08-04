@@ -322,6 +322,14 @@
               </ul>
           </li>
           <li>
+            <a href="#play-oxygen-api-customers" class="toc-h1 toc-link" data-title="Customers">Customers</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-client-customer" class="toc-h2 toc-link" data-title="Create Client Customer">Create Client Customer</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
               <ul class="toc-list-h2">
                   <li>
@@ -329,6 +337,12 @@
                   </li>
                   <li>
                     <a href="#tocS_Authentication Response" class="toc-h2 toc-link" data-title="Authentication Response">Authentication Response</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_Customer Parameters" class="toc-h2 toc-link" data-title="Customer Parameters">Customer Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_Customer Response" class="toc-h2 toc-link" data-title="Customer Response">Customer Response</a>
                   </li>
               </ul>
           </li>
@@ -411,7 +425,7 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/auth/session/<spa
 <tr>
 <td>client_id</td>
 <td>path</td>
-<td>integer</td>
+<td>string</td>
 <td>true</td>
 <td>Client ID</td>
 </tr>
@@ -465,6 +479,96 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/auth/session/<spa
 </tr>
 </tbody></table>
 <h3 id='callbacks'>Callbacks</h3>
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h1 id="play-oxygen-api-customers">Customers</h1>
+<h2 id='create-client-customer'>Create Client Customer</h2>
+<p><a id="opIdCreate Client Customer"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> POST http://localhost:4000/api/<span class="o">{</span>client_id<span class="o">}</span>/<span class="o">{</span>api_key<span class="o">}</span>/customer <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span>
+
+</code></pre></div>
+<p><code>POST /api/{client_id}/{api_key}/customer</code></p>
+
+<p><em>An authenticated Client can add a Customer</em></p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"client_unique_customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_value_123456789"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h3 id="create-client-customer-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>client_id</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Client ID</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemacustomer%20parameters">Customer Parameters</a></td>
+<td>false</td>
+<td>Customer params</td>
+</tr>
+<tr>
+<td>» client_unique_customer_id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Client unique customer identifier</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses</p>
+
+<p>200 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"client_unique_customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_value_123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_123456789"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h3 id="create-client-customer-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>Customer response</td>
+<td><a href="#schemacustomer%20response">Customer Response</a></td>
+</tr>
+</tbody></table>
+<h3 id='callbacks-2'>Callbacks</h3>
 <aside class="success">
 This operation does not require authentication
 </aside>
@@ -540,6 +644,80 @@ This operation does not require authentication
 <td>false</td>
 <td>none</td>
 <td>JWT</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_Customer Parameters">Customer Parameters</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemacustomer parameters"></a>
+<a id="schema_Customer Parameters"></a>
+<a id="tocScustomer parameters"></a>
+<a id="tocscustomer parameters"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"client_unique_customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_value_123456789"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>Customer Parameters</p>
+<h3 id='properties-3'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>client_unique_customer_id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Client unique customer identifier</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_Customer Response">Customer Response</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemacustomer response"></a>
+<a id="schema_Customer Response"></a>
+<a id="tocScustomer response"></a>
+<a id="tocscustomer response"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"client_unique_customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_value_123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_123456789"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>Customer Response</p>
+<h3 id='properties-4'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>client_unique_customer_id</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Client unique customer identifier</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Play Oxygen unique customer identifier</td>
 </tr>
 </tbody></table>
 
