@@ -59,7 +59,7 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|client_id|path|integer|true|Client ID|
+|client_id|path|string|true|Client ID|
 |body|body|[Authentication Parameters](#schemaauthentication parameters)|false|Client params|
 |» api_key|body|string|true|API Key|
 |» secret|body|string|true|API secret|
@@ -79,6 +79,65 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Client response|[Authentication Response](#schemaauthentication response)|
+
+### Callbacks
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h1 id="play-oxygen-api-customers">Customers</h1>
+
+## Create Client Customer
+
+<a id="opIdCreate Client Customer"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST http://localhost:4000/api/{client_id}/{api_key}/customer \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json'
+
+```
+
+`POST /api/{client_id}/{api_key}/customer`
+
+*An authenticated Client can add a Customer*
+
+> Body parameter
+
+```json
+{
+  "client_unique_customer_id": "some_value_123456789"
+}
+```
+
+<h3 id="create-client-customer-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|client_id|path|string|true|Client ID|
+|body|body|[Customer Parameters](#schemacustomer parameters)|false|Customer params|
+|» client_unique_customer_id|body|string|true|Client unique customer identifier|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "client_unique_customer_id": "some_value_123456789",
+  "id": "customer_123456789"
+}
+```
+
+<h3 id="create-client-customer-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Customer response|[Customer Response](#schemacustomer response)|
 
 ### Callbacks
 
@@ -133,3 +192,50 @@ Authentication Response
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |token|string|false|none|JWT|
+
+<h2 id="tocS_Customer Parameters">Customer Parameters</h2>
+<!-- backwards compatibility -->
+<a id="schemacustomer parameters"></a>
+<a id="schema_Customer Parameters"></a>
+<a id="tocScustomer parameters"></a>
+<a id="tocscustomer parameters"></a>
+
+```json
+{
+  "client_unique_customer_id": "some_value_123456789"
+}
+
+```
+
+Customer Parameters
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|client_unique_customer_id|string|true|none|Client unique customer identifier|
+
+<h2 id="tocS_Customer Response">Customer Response</h2>
+<!-- backwards compatibility -->
+<a id="schemacustomer response"></a>
+<a id="schema_Customer Response"></a>
+<a id="tocScustomer response"></a>
+<a id="tocscustomer response"></a>
+
+```json
+{
+  "client_unique_customer_id": "some_value_123456789",
+  "id": "customer_123456789"
+}
+
+```
+
+Customer Response
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|client_unique_customer_id|string|false|none|Client unique customer identifier|
+|id|string|false|none|Play Oxygen unique customer identifier|
+
