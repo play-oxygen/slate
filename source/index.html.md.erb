@@ -98,7 +98,8 @@ This operation does not require authentication
 # You can also use wget
 curl -X POST http://localhost:4000/api/{client_id}/{api_key}/customer \
   -H 'Content-Type: application/json' \
-  -H 'Accept: application/json'
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {access-token}'
 
 ```
 
@@ -141,8 +142,9 @@ curl -X POST http://localhost:4000/api/{client_id}/{api_key}/customer \
 
 ### Callbacks
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+authorization
 </aside>
 
 # Schemas
