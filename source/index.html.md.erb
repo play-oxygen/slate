@@ -60,7 +60,7 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |client_id|path|string|true|Client ID|
-|body|body|[Authentication Parameters](#schemaauthentication parameters)|false|Client params|
+|body|body|[Authentication Parameters](#schemaauthentication parameters)|false|params|
 |» api_key|body|string|true|API Key|
 |» secret|body|string|true|API secret|
 
@@ -78,7 +78,7 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Client response|[Authentication Response](#schemaauthentication response)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|response|[Authentication Response](#schemaauthentication response)|
 
 ### Callbacks
 
@@ -120,7 +120,7 @@ curl -X POST http://localhost:4000/api/{client_id}/{api_key}/customer \
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |client_id|path|string|true|Client ID|
-|body|body|[Customer Parameters](#schemacustomer parameters)|false|Customer params|
+|body|body|[Customer Parameters](#schemacustomer parameters)|false|params|
 |» client_unique_customer_id|body|string|true|Client unique customer identifier|
 
 > Example responses
@@ -138,7 +138,7 @@ curl -X POST http://localhost:4000/api/{client_id}/{api_key}/customer \
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|Customer response|[Customer Response](#schemacustomer response)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|response|[Customer Response](#schemacustomer response)|
 
 ### Callbacks
 
