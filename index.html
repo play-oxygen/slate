@@ -352,6 +352,12 @@
                   <li>
                     <a href="#tocS_Customer Response" class="toc-h2 toc-link" data-title="Customer Response">Customer Response</a>
                   </li>
+                  <li>
+                    <a href="#tocS_Wallet Parameters" class="toc-h2 toc-link" data-title="Wallet Parameters">Wallet Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_Wallet Response" class="toc-h2 toc-link" data-title="Wallet Response">Wallet Response</a>
+                  </li>
               </ul>
           </li>
       </ul>
@@ -557,7 +563,7 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/<span class="o">{
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"client_unique_customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_value_123456789"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_123456789"</span><span class="w">
+  </span><span class="nl">"po2_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_123456789"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <h3 id="create-client-customer-responses">Responses</h3>
@@ -605,7 +611,8 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/<span class="o">{
 <p>Body parameter</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"client_unique_customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_value_123456789"</span><span class="w">
+  </span><span class="nl">"client_unique_customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_value_123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <h3 id="create-client-customer-wallet-parameters">Parameters</h3>
@@ -627,9 +634,16 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/<span class="o">{
 <td>Client ID</td>
 </tr>
 <tr>
+<td>api_key</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>API Key</td>
+</tr>
+<tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schemacustomer%20parameters">Customer Parameters</a></td>
+<td><a href="#schemawallet%20parameters">Wallet Parameters</a></td>
 <td>false</td>
 <td>params</td>
 </tr>
@@ -640,6 +654,13 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/<span class="o">{
 <td>true</td>
 <td>Client unique customer identifier</td>
 </tr>
+<tr>
+<td>» currency</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Valid ISO 4217 currency code (Case insensitive)</td>
+</tr>
 </tbody></table>
 
 <blockquote>
@@ -649,7 +670,8 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/<span class="o">{
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"client_unique_customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_value_123456789"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_123456789"</span><span class="w">
+  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"po2_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet_123456789"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <h3 id="create-client-customer-wallet-responses">Responses</h3>
@@ -666,7 +688,7 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/<span class="o">{
 <td>200</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
 <td>response</td>
-<td><a href="#schemacustomer%20response">Customer Response</a></td>
+<td><a href="#schemawallet%20response">Wallet Response</a></td>
 </tr>
 </tbody></table>
 <h3 id='callbacks-3'>Callbacks</h3>
@@ -792,7 +814,7 @@ authorization ( Scopes: create:wallet )
 <a id="tocscustomer response"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"client_unique_customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_value_123456789"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_123456789"</span><span class="w">
+  </span><span class="nl">"po2_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_123456789"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -815,7 +837,97 @@ authorization ( Scopes: create:wallet )
 <td>Client unique customer identifier</td>
 </tr>
 <tr>
-<td>id</td>
+<td>po2_id</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Play Oxygen unique customer identifier</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_Wallet Parameters">Wallet Parameters</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemawallet parameters"></a>
+<a id="schema_Wallet Parameters"></a>
+<a id="tocSwallet parameters"></a>
+<a id="tocswallet parameters"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"client_unique_customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_value_123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>Wallet Parameters</p>
+<h3 id='properties-5'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>client_unique_customer_id</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Client unique customer identifier</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Valid ISO 4217 currency code (Case insensitive)</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_Wallet Response">Wallet Response</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemawallet response"></a>
+<a id="schema_Wallet Response"></a>
+<a id="tocSwallet response"></a>
+<a id="tocswallet response"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"client_unique_customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_value_123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"po2_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet_123456789"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>Wallet Response</p>
+<h3 id='properties-6'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>client_unique_customer_id</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Client unique customer identifier</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>Valid ISO 4217 currency code (Case insensitive)</td>
+</tr>
+<tr>
+<td>po2_id</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
