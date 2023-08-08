@@ -330,6 +330,14 @@
               </ul>
           </li>
           <li>
+            <a href="#play-oxygen-api-wallets" class="toc-h1 toc-link" data-title="Wallets">Wallets</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-client-customer-wallet" class="toc-h2 toc-link" data-title="Create Client Customer Wallet">Create Client Customer Wallet</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
               <ul class="toc-list-h2">
                   <li>
@@ -573,6 +581,98 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/<span class="o">{
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
 authorization ( Scopes: write:users )
+</aside>
+
+<h1 id="play-oxygen-api-wallets">Wallets</h1>
+<h2 id='create-client-customer-wallet'>Create Client Customer Wallet</h2>
+<p><a id="opIdCreate Client Customer Wallet"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> POST http://localhost:4000/api/<span class="o">{</span>client_id<span class="o">}</span>/<span class="o">{</span>api_key<span class="o">}</span>/wallet <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Authorization: Bearer {access-token}'</span>
+
+</code></pre></div>
+<p><code>POST /api/{client_id}/{api_key}/wallet</code></p>
+
+<p><em>An authenticated Client can add a Customers Wallet</em></p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"client_unique_customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_value_123456789"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h3 id="create-client-customer-wallet-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>client_id</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>Client ID</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemacustomer%20parameters">Customer Parameters</a></td>
+<td>false</td>
+<td>params</td>
+</tr>
+<tr>
+<td>» client_unique_customer_id</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Client unique customer identifier</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>Example responses</p>
+
+<p>200 Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"client_unique_customer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some_value_123456789"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_123456789"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h3 id="create-client-customer-wallet-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>response</td>
+<td><a href="#schemacustomer%20response">Customer Response</a></td>
+</tr>
+</tbody></table>
+<h3 id='callbacks-3'>Callbacks</h3>
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+authorization ( Scopes: create:wallet )
 </aside>
 <h1 id='schemas'>Schemas</h1>
 <h2 id="tocS_Authentication Parameters">Authentication Parameters</h2>
