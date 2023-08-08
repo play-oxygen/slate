@@ -61,8 +61,6 @@ curl -X POST http://localhost:4000/api/auth/session/{client_id} \
 |---|---|---|---|---|
 |client_id|path|string|true|Client ID|
 |body|body|[Authentication Parameters](#schemaauthentication parameters)|false|params|
-|» api_key|body|string|true|API Key|
-|» secret|body|string|true|API secret|
 
 > Example responses
 
@@ -120,8 +118,8 @@ curl -X POST http://localhost:4000/api/{client_id}/{api_key}/customer \
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |client_id|path|string|true|Client ID|
+|api_key|path|string|true|API Key|
 |body|body|[Customer Parameters](#schemacustomer parameters)|false|params|
-|» client_unique_customer_id|body|string|true|Client unique customer identifier|
 
 > Example responses
 
@@ -184,8 +182,6 @@ curl -X POST http://localhost:4000/api/{client_id}/{api_key}/wallet \
 |client_id|path|string|true|Client ID|
 |api_key|path|string|true|API Key|
 |body|body|[Wallet Parameters](#schemawallet parameters)|false|params|
-|» client_unique_customer_id|body|string|true|Client unique customer identifier|
-|» currency|body|string|true|Valid ISO 4217 currency code (Case insensitive)|
 
 > Example responses
 
