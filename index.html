@@ -450,20 +450,6 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/auth/session/<spa
 <td>false</td>
 <td>params</td>
 </tr>
-<tr>
-<td>» api_key</td>
-<td>body</td>
-<td>string</td>
-<td>true</td>
-<td>API Key</td>
-</tr>
-<tr>
-<td>» secret</td>
-<td>body</td>
-<td>string</td>
-<td>true</td>
-<td>API secret</td>
-</tr>
 </tbody></table>
 
 <blockquote>
@@ -541,18 +527,18 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/<span class="o">{
 <td>Client ID</td>
 </tr>
 <tr>
+<td>api_key</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>API Key</td>
+</tr>
+<tr>
 <td>body</td>
 <td>body</td>
 <td><a href="#schemacustomer%20parameters">Customer Parameters</a></td>
 <td>false</td>
 <td>params</td>
-</tr>
-<tr>
-<td>» client_unique_customer_id</td>
-<td>body</td>
-<td>string</td>
-<td>true</td>
-<td>Client unique customer identifier</td>
 </tr>
 </tbody></table>
 
@@ -646,20 +632,6 @@ curl <span class="nt">-X</span> POST http://localhost:4000/api/<span class="o">{
 <td><a href="#schemawallet%20parameters">Wallet Parameters</a></td>
 <td>false</td>
 <td>params</td>
-</tr>
-<tr>
-<td>» client_unique_customer_id</td>
-<td>body</td>
-<td>string</td>
-<td>true</td>
-<td>Client unique customer identifier</td>
-</tr>
-<tr>
-<td>» currency</td>
-<td>body</td>
-<td>string</td>
-<td>true</td>
-<td>Valid ISO 4217 currency code (Case insensitive)</td>
 </tr>
 </tbody></table>
 
