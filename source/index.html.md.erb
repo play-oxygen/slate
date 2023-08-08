@@ -147,6 +147,67 @@ To perform this operation, you must be authenticated by means of one of the foll
 authorization ( Scopes: write:users )
 </aside>
 
+<h1 id="play-oxygen-api-wallets">Wallets</h1>
+
+## Create Client Customer Wallet
+
+<a id="opIdCreate Client Customer Wallet"></a>
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X POST http://localhost:4000/api/{client_id}/{api_key}/wallet \
+  -H 'Content-Type: application/json' \
+  -H 'Accept: application/json' \
+  -H 'Authorization: Bearer {access-token}'
+
+```
+
+`POST /api/{client_id}/{api_key}/wallet`
+
+*An authenticated Client can add a Customers Wallet*
+
+> Body parameter
+
+```json
+{
+  "client_unique_customer_id": "some_value_123456789"
+}
+```
+
+<h3 id="create-client-customer-wallet-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|client_id|path|string|true|Client ID|
+|body|body|[Customer Parameters](#schemacustomer parameters)|false|params|
+|» client_unique_customer_id|body|string|true|Client unique customer identifier|
+
+> Example responses
+
+> 200 Response
+
+```json
+{
+  "client_unique_customer_id": "some_value_123456789",
+  "id": "customer_123456789"
+}
+```
+
+<h3 id="create-client-customer-wallet-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|response|[Customer Response](#schemacustomer response)|
+
+### Callbacks
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+authorization ( Scopes: create:wallet )
+</aside>
+
 # Schemas
 
 <h2 id="tocS_Authentication Parameters">Authentication Parameters</h2>
