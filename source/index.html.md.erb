@@ -130,7 +130,7 @@ curl -X POST http://localhost:4000/api/{client_id}/{api_key}/customer \
 ```json
 {
   "client_unique_customer_id": "some_value_123456789",
-  "id": "customer_123456789"
+  "po2_id": "customer_123456789"
 }
 ```
 
@@ -172,7 +172,8 @@ curl -X POST http://localhost:4000/api/{client_id}/{api_key}/wallet \
 
 ```json
 {
-  "client_unique_customer_id": "some_value_123456789"
+  "client_unique_customer_id": "some_value_123456789",
+  "currency": "USD"
 }
 ```
 
@@ -181,8 +182,10 @@ curl -X POST http://localhost:4000/api/{client_id}/{api_key}/wallet \
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |client_id|path|string|true|Client ID|
-|body|body|[Customer Parameters](#schemacustomer parameters)|false|params|
+|api_key|path|string|true|API Key|
+|body|body|[Wallet Parameters](#schemawallet parameters)|false|params|
 |» client_unique_customer_id|body|string|true|Client unique customer identifier|
+|» currency|body|string|true|Valid ISO 4217 currency code (Case insensitive)|
 
 > Example responses
 
@@ -191,7 +194,8 @@ curl -X POST http://localhost:4000/api/{client_id}/{api_key}/wallet \
 ```json
 {
   "client_unique_customer_id": "some_value_123456789",
-  "id": "customer_123456789"
+  "currency": "USD",
+  "po2_id": "wallet_123456789"
 }
 ```
 
@@ -199,7 +203,7 @@ curl -X POST http://localhost:4000/api/{client_id}/{api_key}/wallet \
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|response|[Customer Response](#schemacustomer response)|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|response|[Wallet Response](#schemawallet response)|
 
 ### Callbacks
 
@@ -288,7 +292,7 @@ Customer Parameters
 ```json
 {
   "client_unique_customer_id": "some_value_123456789",
-  "id": "customer_123456789"
+  "po2_id": "customer_123456789"
 }
 
 ```
@@ -300,5 +304,55 @@ Customer Response
 |Name|Type|Required|Restrictions|Description|
 |---|---|---|---|---|
 |client_unique_customer_id|string|false|none|Client unique customer identifier|
-|id|string|false|none|Play Oxygen unique customer identifier|
+|po2_id|string|false|none|Play Oxygen unique customer identifier|
+
+<h2 id="tocS_Wallet Parameters">Wallet Parameters</h2>
+<!-- backwards compatibility -->
+<a id="schemawallet parameters"></a>
+<a id="schema_Wallet Parameters"></a>
+<a id="tocSwallet parameters"></a>
+<a id="tocswallet parameters"></a>
+
+```json
+{
+  "client_unique_customer_id": "some_value_123456789",
+  "currency": "USD"
+}
+
+```
+
+Wallet Parameters
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|client_unique_customer_id|string|true|none|Client unique customer identifier|
+|currency|string|true|none|Valid ISO 4217 currency code (Case insensitive)|
+
+<h2 id="tocS_Wallet Response">Wallet Response</h2>
+<!-- backwards compatibility -->
+<a id="schemawallet response"></a>
+<a id="schema_Wallet Response"></a>
+<a id="tocSwallet response"></a>
+<a id="tocswallet response"></a>
+
+```json
+{
+  "client_unique_customer_id": "some_value_123456789",
+  "currency": "USD",
+  "po2_id": "wallet_123456789"
+}
+
+```
+
+Wallet Response
+
+### Properties
+
+|Name|Type|Required|Restrictions|Description|
+|---|---|---|---|---|
+|client_unique_customer_id|string|false|none|Client unique customer identifier|
+|currency|string|false|none|Valid ISO 4217 currency code (Case insensitive)|
+|po2_id|string|false|none|Play Oxygen unique customer identifier|
 
